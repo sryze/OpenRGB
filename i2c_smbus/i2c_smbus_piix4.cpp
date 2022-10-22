@@ -13,6 +13,10 @@
 #include "LogManager.h"
 #include "ResourceManager.h"
 
+#ifndef CREATE_WAITABLE_TIMER_HIGH_RESOLUTION
+#define CREATE_WAITABLE_TIMER_HIGH_RESOLUTION 0x00000002
+#endif
+
 i2c_smbus_piix4::i2c_smbus_piix4()
 {
     json drivers_settings = ResourceManager::get()->GetSettingsManager()->GetSettings("Drivers");

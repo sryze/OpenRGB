@@ -8,6 +8,8 @@
 |  Adam Honse (CalcProgrammer1) 11/21/2021  |
 \*-----------------------------------------*/
 
+#ifndef __MINGW32__
+
 #include "ENESMBusInterface_SpectrixS40G_Windows.h"
 
 #include <fileapi.h>
@@ -254,3 +256,5 @@ void ENESMBusInterface_SpectrixS40G::ENERegisterWriteBlock(ene_dev_id dev, ene_r
         DeviceIoControl(nvme_fd, IOCTL_STORAGE_PROTOCOL_COMMAND, buffer, sizeof(buffer), buffer, sizeof(buffer), 0x0, (LPOVERLAPPED)0x0);
     }
 }
+
+#endif

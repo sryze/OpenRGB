@@ -3,6 +3,11 @@
 
 #include <stdint.h>
 
+#ifdef __MINGW32__
+#define __in
+#define __inout
+#endif
+
 typedef int32_t NV_S32;
 typedef uint32_t NV_U32;
 typedef uint8_t NV_U8;
@@ -1031,5 +1036,8 @@ NV_STATUS NvAPI_GPU_ClientIllumZonesGetControl(
 NV_STATUS NvAPI_GPU_ClientIllumZonesSetControl(
     __in NV_PHYSICAL_GPU_HANDLE physical_gpu_handle,
     __inout NV_GPU_CLIENT_ILLUM_ZONE_CONTROL_PARAMS* pIllumZonesControl);
+
+#undef __in
+#undef __inout
 
 #endif

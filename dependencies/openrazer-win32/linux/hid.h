@@ -74,7 +74,7 @@ struct hid_device_id {
 
 struct hid_device {
 	__u16 product;
-	enum hid_type type;
+    hid_type type;
 	struct device dev;
 	struct hid_ll_driver *ll_driver;
 	unsigned int status;

@@ -35,8 +35,10 @@
 #define true 1
 #define false 0
 
+#ifndef __MINGW32__
 #define size_t SIZE_T
 #define ssize_t SSIZE_T
+#endif
 
 struct mutex {
 	CRITICAL_SECTION lock;
